@@ -54,7 +54,7 @@ export default function App() {
               >
                 <Html5QrcodePlugin
                   fps={10}
-                  qrbox={100}
+                  qrbox={150}
                   disableFlip={false}
                   qrCodeSuccessCallback={onNewScanResult}
                 />
