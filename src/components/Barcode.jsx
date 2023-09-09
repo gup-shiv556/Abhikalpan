@@ -1,4 +1,4 @@
-import { Html5QrcodeScanner } from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 import { useEffect } from "react";
 import style from "../pages/styles.css";
 
@@ -31,15 +31,16 @@ const Html5QrcodePlugin = (props) => {
     if (!props.qrCodeSuccessCallback) {
       throw "qrCodeSuccessCallback is required callback.";
     }
-    const html5QrcodeScanner = new Html5QrcodeScanner(
-      qrcodeRegionId,
+    const html5QrcodeScanner = new Html5Qrcode(qrcodeRegionId, config, verbose);
+    html5QrcodeScanner.start(
+      { facingMode: "environment" },
       config,
-      verbose
+      props.qrCodeSuccessCallback
     );
-    html5QrcodeScanner.render(
-      props.qrCodeSuccessCallback,
-      props.qrCodeErrorCallback
-    );
+    // html5QrcodeScanner.render(
+    //   props.qrCodeSuccessCallback,
+    //   props.qrCodeErrorCallback
+    // );
 
     // cleanup function when component will unmount
     return () => {
