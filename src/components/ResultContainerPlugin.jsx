@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import DataTable, { createTheme } from "react-data-table-component";
 import { downloadExcel } from "react-export-table-to-excel";
-var results;
+var results,
+  conditionalData = [{}];
 
 createTheme(
   "solarized",
@@ -50,20 +51,31 @@ function filterResults(results) {
 }
 const ResultContainerTable = ({ data }) => {
   results = filterResults(data);
+  let string = JSON.stringify(results);
+  var todoList = JSON.parse(localStorage.getItem("dataForTable"));
 
+  useEffect(() => {
+    if (string.length > 2) {
+      localStorage.setItem("dataForTable", string);
+    }
+  }, [string]);
   const tableRef = useRef(null);
   const header = ["Panel ID"];
-
+  if (todoList?.length > 0) {
+    conditionalData = todoList;
+  } else {
+    conditionalData = results;
+  }
   function handleDownloadExcel() {
     downloadExcel({
       fileName: "PanelID's",
       sheet: "react-export-table-to-excel",
       tablePayload: {
         header,
-        // accept two different data structures
-        body: results,
+        body: conditionalData,
       },
     });
+    localStorage.removeItem("dataForTable");
   }
 
   const buttonStyle = {
@@ -99,7 +111,7 @@ const ResultContainerTable = ({ data }) => {
       <DataTable
         ref={tableRef}
         columns={columns}
-        data={results}
+        data={conditionalData}
         direction="auto"
         fixedHeader
         fixedHeaderScrollHeight="300px"
@@ -117,10 +129,11 @@ const ResultContainerTable = ({ data }) => {
 
 const ResultContainerPlugin = (props) => {
   const results = filterResults(props.results);
+  var todoList = JSON.parse(localStorage.getItem("dataForTable")) || [];
 
   return (
     <div className="Result-container">
-      <div className="Result-header">Scanned results ({results.length})</div>
+      <div className="Result-header">Scanned results ({todoList.length})</div>
       <div className="Result-section">
         <ResultContainerTable data={results} />
       </div>
