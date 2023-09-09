@@ -54,6 +54,7 @@ export default function App() {
               >
                 <Html5QrcodePlugin
                   fps={10}
+                  torchFeature={true}
                   qrbox={100}
                   disableFlip={false}
                   qrCodeSuccessCallback={onNewScanResult}
