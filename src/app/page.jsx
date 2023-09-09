@@ -38,6 +38,8 @@ export default function App() {
               <h6>
                 {" "}
                 <b>ABHIKALPAN ASSET MANAGEMENT SYSTEM</b>
+                <br />
+                <br />
               </h6>
             </div>
             <div className="results-list-container">
