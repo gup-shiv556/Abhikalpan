@@ -23,6 +23,9 @@ const createConfig = (props) => {
   if (props.disableFlip !== undefined) {
     config.disableFlip = props.disableFlip;
   }
+  if (props.torchFeature) {
+    config.torchFeature = props.torchFeature;
+  }
   return config;
 };
 
