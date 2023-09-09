@@ -33,10 +33,11 @@ const Html5QrcodePlugin = (props) => {
     }
     const html5QrcodeScanner = new Html5Qrcode(qrcodeRegionId, config, verbose);
     html5QrcodeScanner.start(
-      { facingMode: "environment" },
+      { facingMode: "user" },
       config,
       props.qrCodeSuccessCallback
     );
+
     // html5QrcodeScanner.render(
     //   props.qrCodeSuccessCallback,
     //   props.qrCodeErrorCallback
