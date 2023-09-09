@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/bootstrap.min.css";
 import "../styles/icomoon/style.css";
 import "../styles/style.css";
-import MyImage from "../images/bg_logo.jpg";
+import MyImage from "../images/img.gif";
 import Image from "next/image";
 import Html5QrcodePlugin from "../components/Barcode";
 import ResultContainerPlugin from "../components/ResultContainerPlugin.jsx";
@@ -26,10 +26,10 @@ export default function App() {
       <>
         <div className="form-container sign-in-container">
           <div className="half">
-            <div className="bg order-1 order-md-2">
+            <div className="bg order-1 order-md-2" style={{ height: "auto" }}>
               <Image
                 src={MyImage}
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "45%" }}
                 alt="Picture of the author"
               />
             </div>

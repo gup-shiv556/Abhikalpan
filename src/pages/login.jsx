@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Router from "next/router";
 import { useSession, signIn } from "next-auth/react";
-import MyImage from "../images/bg_logo.jpg";
+import MyImage from "../images/img.gif";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -49,10 +49,10 @@ function App() {
     return (
       <div className="form-container sign-in-container">
         <div className="half">
-          <div className="bg order-1 order-md-2">
+          <div className="bg order-1 order-md-2" style={{ height: "auto" }}>
             <Image
               src={MyImage}
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "45%" }}
               alt="Picture of the author"
             />
           </div>
