@@ -35,10 +35,10 @@ export default function App() {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              <h3>
+              <h6>
                 {" "}
                 <b>ABHIKALPAN ASSET MANAGEMENT SYSTEM</b>
-              </h3>
+              </h6>
             </div>
             <div className="results-list-container">
               <div
