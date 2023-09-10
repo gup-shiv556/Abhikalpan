@@ -1,12 +1,4 @@
-// import NextAuth from 'next-auth';
 import login from '../../login'
-// export default NextAuth({
-//   providers: [],
-//   authorize: async (credentials, req) => {
-//     // This will call the authorize() method in pages/api/auth/credentials.js.
-//     return await NextAuth.callAuthorize('credentials', credentials, req);
-//   },
-// });
 
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -26,8 +18,12 @@ const authOptions: NextAuthOptions = {
         };
         // perform you login logic
         // find out user from db
-        if (email !== "dev@abhikalpan.co.in" || password !== "Abhikalpan$2023") {
-          throw new Error("invalid credentials");
+        if (email !== "dev@abhikalpan.co.in" ) {
+          throw new Error("invalid email");
+        }
+
+        else if (password !== "Abhikalpan$2023") {
+          throw new Error("invalid password");
         }
 
         // if everything is fine

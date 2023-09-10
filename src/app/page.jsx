@@ -9,6 +9,8 @@ import Html5QrcodePlugin from "../components/Barcode";
 import ResultContainerPlugin from "../components/ResultContainerPlugin.jsx";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
+import logOut from "../images/logout.svg";
 
 export default function App() {
   const [decodedResults, setDecodedResults] = useState([]);
@@ -27,13 +29,40 @@ export default function App() {
         <title>HomePage</title>
         <div className="form-container sign-in-container">
           <div className="half">
-            <div className="bg order-1 order-md-2" style={{ height: "auto" }}>
+            <div
+              className="bg order-1 order-md-2"
+              style={{
+                height: "auto",
+                position: "relative",
+                display: "inline-block",
+              }}
+            >
               <Image
                 src={MyImage}
                 style={{ width: "100%", height: "45%" }}
                 alt="Picture of the author"
               />
+              <button
+                style={{
+                  position: "absolute",
+                  top: "14%",
+                  right: "-4%",
+                  transform: "translate(-50%, -50%)",
+                  padding: "2px 7px",
+                  fontSize: "6px",
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                }}
+                onClick={() => signOut({ callbackUrl: "/login" })}
+              >
+                <Image
+                  src={logOut}
+                  style={{ height: "11px", width: "100%" }}
+                  id="camPlaceHolder"
+                />
+              </button>
             </div>
+
             <br />
             <div style={{ textAlign: "center" }}>
               <h6>
