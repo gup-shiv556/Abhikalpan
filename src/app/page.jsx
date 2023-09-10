@@ -46,15 +46,15 @@ export default function App() {
                 style={{
                   position: "absolute",
                   top: "14%",
-                  right: "0%",
+                  right: "-8%",
                   transform: "translate(-50%, -50%)",
                   padding: "2px 7px",
-                  fontSize: "6px",
+                  fontSize: "8px",
                   backgroundColor: "transparent",
                   borderColor: "transparent",
                   display: "flex",
                   color: "black",
-                  alignItems: "ceter",
+                  alignItems: "center",
                   flexDirection: "row",
                 }}
                 onClick={() => signOut({ callbackUrl: "/login" })}
