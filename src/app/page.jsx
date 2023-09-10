@@ -46,19 +46,24 @@ export default function App() {
                 style={{
                   position: "absolute",
                   top: "14%",
-                  right: "-4%",
+                  right: "0%",
                   transform: "translate(-50%, -50%)",
                   padding: "2px 7px",
                   fontSize: "6px",
                   backgroundColor: "transparent",
                   borderColor: "transparent",
+                  display: "flex",
+                  color: "black",
+                  alignItems: "ceter",
+                  flexDirection: "row",
                 }}
                 onClick={() => signOut({ callbackUrl: "/login" })}
               >
+                <div style={{ marginRight: "4px" }}>Logout</div>
                 <Image
                   src={logOut}
                   style={{ height: "11px", width: "100%" }}
-                  id="camPlaceHolder"
+                  id="logout"
                 />
               </button>
             </div>
