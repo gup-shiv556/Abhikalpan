@@ -24,6 +24,7 @@ export default function App() {
   if (status === "authenticated")
     return (
       <>
+        <title>HomePage</title>
         <div className="form-container sign-in-container">
           <div className="half">
             <div className="bg order-1 order-md-2" style={{ height: "auto" }}>

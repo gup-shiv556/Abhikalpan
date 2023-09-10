@@ -47,108 +47,90 @@ function App() {
   // JSX code for login form
   if (status === "unauthenticated")
     return (
-      <div className="form-container sign-in-container">
-        <div className="half">
-          <div className="bg order-1 order-md-2" style={{ height: "auto" }}>
-            <Image
-              src={MyImage}
-              style={{ width: "100%", height: "45%" }}
-              alt="Picture of the author"
-            />
-          </div>
-          <div className="contents order-2 order-md-1">
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-md-6">
-                  <div className="form-block">
-                    <div className="text-center mb-5">
-                      <h3>
-                        Login to <strong>Abhikalpan</strong>
-                      </h3>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                      <div className="form-group first">
-                        <label for="username">Username</label>
-                        <input
-                          type="email"
-                          placeholder="Email"
-                          name="email"
-                          // value={state.email}
-                          // onChange={handleChange}
-                          onChange={(event) => setUsername(event.target.value)}
-                          className="form-control"
-                          id="username"
-                        />
+      <>
+        <title>Login</title>
+        <div className="form-container sign-in-container">
+          <div className="half">
+            <div className="bg order-1 order-md-2" style={{ height: "auto" }}>
+              <Image
+                src={MyImage}
+                style={{ width: "100%", height: "45%" }}
+                alt="Picture of the author"
+              />
+            </div>
+            <div className="contents order-2 order-md-1">
+              <div className="container">
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-md-6">
+                    <div className="form-block">
+                      <div className="text-center mb-5">
+                        <h3>
+                          Login to <strong>Abhikalpan</strong>
+                        </h3>
                       </div>
-                      <div style={{ textAlign: "center" }}>
-                        {renderErrorMessage("uname")}
-                      </div>
-                      <br />
-                      <div className="form-group last mb-3">
-                        <label for="password">Password</label>
-                        <input
-                          type="password"
-                          name="password"
-                          placeholder="Password"
-                          // value={state.password}
-                          // onChange={handleChange}
-                          onChange={(event) => setPassword(event.target.value)}
-                          className="form-control"
-                          id="password"
-                        />
-                        <br />
-                        <div style={{ textAlign: "center" }}>
-                          {renderErrorMessage("pass")}
+                      <form onSubmit={handleSubmit}>
+                        <div className="form-group first">
+                          <label for="username">Username</label>
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            name="email"
+                            // value={state.email}
+                            // onChange={handleChange}
+                            onChange={(event) =>
+                              setUsername(event.target.value)
+                            }
+                            className="form-control"
+                            id="username"
+                          />
                         </div>
-                      </div>
+                        <div style={{ textAlign: "center" }}>
+                          {renderErrorMessage("uname")}
+                        </div>
+                        <br />
+                        <div className="form-group last mb-3">
+                          <label for="password">Password</label>
+                          <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            // value={state.password}
+                            // onChange={handleChange}
+                            onChange={(event) =>
+                              setPassword(event.target.value)
+                            }
+                            className="form-control"
+                            id="password"
+                          />
+                          <br />
+                          <div style={{ textAlign: "center" }}>
+                            {renderErrorMessage("pass")}
+                          </div>
+                        </div>
 
-                      <div className="d-sm-flex mb-5 align-items-center">
-                        <label className="control control--checkbox mb-3 mb-sm-0">
-                          <span className="caption">Remember me</span>
-                          <input type="checkbox" />
-                          <div className="control__indicator"></div>
-                        </label>
-                        {/* <span className="ml-auto"><a href="#" className="forgot-pass">Forgot Password</a></span>  */}
-                      </div>
+                        <div className="d-sm-flex mb-5 align-items-center">
+                          <label className="control control--checkbox mb-3 mb-sm-0">
+                            <span className="caption">Remember me</span>
+                            <input type="checkbox" />
+                            <div className="control__indicator"></div>
+                          </label>
+                          {/* <span className="ml-auto"><a href="#" className="forgot-pass">Forgot Password</a></span>  */}
+                        </div>
 
-                      {/* <input className="btn btn-block btn-primary"/> */}
-                      <button className="btn btn-block btn-primary">
-                        Sign In
-                      </button>
-                    </form>
+                        {/* <input className="btn btn-block btn-primary"/> */}
+                        <button className="btn btn-block btn-primary">
+                          Sign In
+                        </button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      // <div>
-      //   <h1>Login</h1>
-      //   {!session.data && (
-      //     <form onSubmit={handleSubmit}>
-      //       <input
-      //         type="text"
-      //         placeholder="Username"
-      //         value={username}
-      //         onChange={(event) => setUsername(event.target.value)}
-      //       />
-      //       <input
-      //         type="password"
-      //         placeholder="Password"
-      //         value={password}
-      //         onChange={(event) => setPassword(event.target.value)}
-      //       />
-      //       <button type="submit">Login</button>
-      //     </form>
-      //   )}
-      //   {session.data && <p>You are logged in.</p>}
-      // </div>
+      </>
     );
-
-  // return (
-  //   <>{status === "unauthenticated" ? renderForm : router.replace("/login")}</>
-  // );
 }
 
 export default App;
