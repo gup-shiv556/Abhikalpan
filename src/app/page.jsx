@@ -39,7 +39,7 @@ export default function App() {
             >
               <Image
                 src={MyImage}
-                style={{ width: "100%", height: "45%" }}
+                style={{ width: "100%", height: "45%", marginTop: "10px" }}
                 alt="Picture of the author"
               />
               <button
