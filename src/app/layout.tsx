@@ -2,6 +2,7 @@ import "../styles/bootstrap.min.css";
 import "../styles/style.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { NextAuthProvider } from "./sessionProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 // type Props = {
 //   children: ReactNode;
@@ -28,7 +29,9 @@ export default function RootLayout({
 
           {/* <title>Loasdginsd</title> */}
         </head>
-        <body>{children}</body>
+        <body>
+          {children} <Analytics />
+        </body>
       </html>
     </NextAuthProvider>
   );
